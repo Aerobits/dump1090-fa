@@ -1383,6 +1383,7 @@ static bool signalFromHex(const char *hex, double *signal)
 // case where we want broken messages here to close the client connection.
 //
 static int decodeHexMessage(struct client *c, char *hex) {
+    strtok(hex,"(");
     int l = strlen(hex), j;
     unsigned char msg[MODES_LONG_MSG_BYTES];
     struct modesMessage mm;
